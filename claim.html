@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Картриджи
+{% endblock %}
+
+{% block body%}
+<div class="container mt-5">
+    <h2>Сформированные картриджи</h2>
+
+    {% for element in cartridges %}
+    <div class="alert alert-info">
+        <h2>{{ element.unit_card }}</h2>
+
+        <a href="/claim/{{ element.id_card }}" class="btn btn-warning">Обзор</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

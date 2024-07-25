@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title%}
+Сформированные заявки
+{% endblock %}
+
+{% block body%}
+<div class="container mt-5">
+    <h2>Сформированные заявки</h2>
+    {% for element in articles %}
+    <div class="alert alert-info">
+        <h2>{{element.unit}}</h2>
+        <p><b>Дата:{{element.date.date()}}</b></p>
+        <a href="/application/{{ element.id }}" class="btn btn-warning">Обзор</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
